@@ -6,17 +6,28 @@
 var nextGreatestLetter = function(letters, target) {
     // return letters.find(ansLetter => ansLetter > target ) || letters[0];
 
-        for(let i = 0; i < letters.length; i++) {
-        if (target < letters[i]) {
+      //   for(let i = 0; i < letters.length; i++) {
+      //   if (target < letters[i]) {
 
-            return letters[i]
-        }
+      //       return letters[i]
+      //   }
         
-        if(i === letters.length - 1) {{
+      //   if(i === letters.length - 1) {{
          
-            return letters[0];
-        }}
-    }  
+      //       return letters[0];
+      //   }}
+      // }  
+       let left = 0, right = letters.length -1;
+        while (left <= right) {
+          let mid = Math.floor((left+right)/2);
+          if(letters[mid] > target){
+              right = mid - 1;
+          } else {
+              left = mid + 1
+          }
+          }
+        if(letters.length === left) return letters[0];
+        else return letters[left]
 };
 
 /*
