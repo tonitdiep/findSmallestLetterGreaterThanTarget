@@ -4,7 +4,19 @@
  * @return {character}
  */
 var nextGreatestLetter = function(letters, target) {
-    return letters.find(ansLetter => ansLetter > target ) || letters[0];  
+    // return letters.find(ansLetter => ansLetter > target ) || letters[0];
+
+        for(let i = 0; i < letters.length; i++) {
+        if (target < letters[i]) {
+
+            return letters[i]
+        }
+        
+        if(i === letters.length - 1) {{
+         
+            return letters[0];
+        }}
+    }  
 };
 
 /*
