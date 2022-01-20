@@ -4,7 +4,7 @@
  * @return {character}
  */
 var nextGreatestLetter = function(letters, target) {
-
+    return letters.find(ansLetter => ansLetter > target ) || letters[0];  
 };
 
 /*
